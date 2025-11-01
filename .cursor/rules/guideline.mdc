@@ -113,12 +113,17 @@ Every folder MUST have a README.md with this exact structure:
 
 Every `.go` file MUST:
 
-1. ✅ **Pass `gofmt`**
+1. ✅ **Pass `gofmt`** (for Go files)
    ```bash
    gofmt -w filename.go
-````
+   ```
 
-2. ✅ **Have godoc comments on all exports**
+2. ✅ **Pass `prettier`** (for Markdown files)
+   ```bash
+   prettier --write "*.md"
+   ```
+
+3. ✅ **Have godoc comments on all exports**
 
    ```go
    // Add returns the sum of two integers.
@@ -126,7 +131,7 @@ Every `.go` file MUST:
    func Add(a, b int) int
    ```
 
-3. ✅ **Use named constants, not magic numbers**
+4. ✅ **Use named constants, not magic numbers**
 
    ```go
    // ❌ BAD
@@ -137,7 +142,7 @@ Every `.go` file MUST:
    area := Pi * radius * radius
    ```
 
-4. ✅ **Include package-level documentation**
+5. ✅ **Include package-level documentation**
 
    ```go
    // Package mathutil provides mathematical utility functions
@@ -145,7 +150,7 @@ Every `.go` file MUST:
    package mathutil
    ```
 
-5. ✅ **Handle all errors**
+6. ✅ **Handle all errors**
 
    ```go
    // ❌ BAD
@@ -357,9 +362,21 @@ go build ./...
 
 ### ✅ Code Formats
 
+**Go files:**
 ```bash
 gofmt -w .
 ```
+
+**Markdown files:**
+```bash
+# Install prettier (if not installed)
+npm install -g prettier
+
+# Format all markdown
+prettier --write "**/*.md"
+```
+
+Note: Always run prettier on markdown files after editing to maintain consistent formatting.
 
 ### ✅ No Syntax Errors
 
@@ -648,7 +665,8 @@ For this tutorial course:
 Before accepting any changes:
 
 - [ ] Code compiles and runs
-- [ ] Formatted with `gofmt`
+- [ ] Go files formatted with `gofmt -s -w .`
+- [ ] Markdown files formatted with `prettier --write "**/*.md"`
 - [ ] Follows naming conventions
 - [ ] Has proper documentation
 - [ ] No magic numbers or hardcoded values
@@ -657,19 +675,25 @@ Before accepting any changes:
 - [ ] Fits into learning progression
 - [ ] Maintains consistent style
 
+**Quick format command:**
+```bash
+make format  # Formats both Go and Markdown
+```
+
 ---
 
 ## 📊 Quality Metrics
 
 ### Target Standards
 
-| Metric           | Target       | How to Check               |
-| ---------------- | ------------ | -------------------------- |
-| gofmt compliance | 100%         | `gofmt -l .` returns empty |
-| Godoc coverage   | 100% exports | Manual review              |
-| Code compiles    | 100%         | `go build ./...`           |
-| Magic numbers    | 0            | Manual review              |
-| Error handling   | 100%         | No `_` on errors           |
+| Metric              | Target       | How to Check                       |
+| ------------------- | ------------ | ---------------------------------- |
+| gofmt compliance    | 100%         | `gofmt -l .` returns empty         |
+| prettier compliance | 100%         | `prettier --check "**/*.md"`       |
+| Godoc coverage      | 100% exports | Manual review                      |
+| Code compiles       | 100%         | `go build ./...`                   |
+| Magic numbers       | 0            | Manual review                      |
+| Error handling      | 100%         | No `_` on errors in production     |
 
 ### Review Frequency
 

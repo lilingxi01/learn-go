@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+vendor/
+
+# Build outputs
+bin/
+dist/
+*.exe
+
+# Go files (use gofmt instead)
+*.go
+
+# Generated files
+*.gen.*
+
+# Temporary files
+*.tmp
+tmp/
+

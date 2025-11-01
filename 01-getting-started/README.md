@@ -22,6 +22,7 @@ Go (often called Golang) is an open-source programming language created by Googl
 ### Why Go?
 
 Go was created to solve real problems at Google:
+
 - **Fast compilation**: Go compiles quickly to machine code
 - **Simplicity**: Easy to learn, easy to read
 - **Concurrency**: Built-in support for concurrent programming
@@ -56,6 +57,7 @@ You should see something like: `go version go1.21.0 darwin/amd64`
 ### Set Up Your Workspace
 
 Go uses a workspace directory structure. By default:
+
 - `~/go` on macOS/Linux
 - `%USERPROFILE%\go` on Windows
 
@@ -72,6 +74,7 @@ Look at `hello.go` in this folder - it's your first Go program!
 ### Program Structure
 
 Every Go program has:
+
 1. **Package declaration**: `package main` - the entry point
 2. **Imports**: External packages you use
 3. **Functions**: Code that does work
@@ -93,12 +96,14 @@ go build hello.go
 ```go
 package main  // This is an executable program
 ```
+
 - `package main` means this is an executable (not a library)
 - Every executable Go program must have a `main` package
 
 ```go
 import "fmt"  // Import the format package
 ```
+
 - `import` brings in code from other packages
 - `fmt` is the format package (for printing, formatting)
 
@@ -107,6 +112,7 @@ func main() {
     // Code here
 }
 ```
+
 - `func` declares a function
 - `main()` is the entry point - execution starts here
 - `{}` contain the function body
@@ -114,6 +120,7 @@ func main() {
 ```go
 fmt.Println("Hello, World!")
 ```
+
 - Calls the `Println` function from the `fmt` package
 - Prints text and adds a newline
 
@@ -122,6 +129,7 @@ fmt.Println("Hello, World!")
 Now it's your turn! Open `challenge.go` and try to solve the challenge.
 
 **Task**: Modify the program to:
+
 1. Print a personalized greeting with your name
 2. Print your favorite programming language
 3. Print why you want to learn Go
@@ -157,6 +165,7 @@ go env
 ## Next Steps
 
 After completing this lesson:
+
 1. Try the challenge
 2. Experiment with `fmt.Println()` - print different messages
 3. Read the solution and compare with yours
@@ -192,4 +201,3 @@ func main() {
 ---
 
 **Congratulations!** 🎉 You've written your first Go program. Keep going!
-
