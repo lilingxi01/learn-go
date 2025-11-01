@@ -1,8 +1,8 @@
 package main
 
-import "fmt"
-
 // Challenge: Temperature Converter
+//
+// You'll need to import "fmt" to use fmt.Printf and fmt.Println
 //
 // Create a program that converts temperatures between Celsius, Fahrenheit, and Kelvin.
 //

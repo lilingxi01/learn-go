@@ -126,7 +126,7 @@ fmt.Println("Hello, World!")
 
 ## Challenge Time! 🎯
 
-Now it's your turn! Open `challenge.go` and try to solve the challenge.
+Now it's your turn! Open `challenge/challenge.go` and try to solve the challenge.
 
 **Task**: Modify the program to:
 
@@ -134,7 +134,7 @@ Now it's your turn! Open `challenge.go` and try to solve the challenge.
 2. Print your favorite programming language
 3. Print why you want to learn Go
 
-Try to solve it yourself before looking at `challenge-solution.go`!
+Try to solve it yourself before looking at `challenge-solution/challenge-solution.go`!
 
 ## Go Commands to Know
 

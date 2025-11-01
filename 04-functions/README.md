@@ -146,7 +146,7 @@ Build a calculator that performs basic operations with proper error handling.
 4. Create a main calculator function that takes operation type
 5. Test with various inputs
 
-Try it yourself before checking `challenge-solution.go`!
+Try it yourself before checking `challenge-solution/challenge-solution.go`!
 
 ## Best Practices
 

@@ -1,8 +1,8 @@
 package main
 
-import "fmt"
-
 // Challenge: Create a Personalized Greeting Program
+//
+// You'll need to import "fmt" to use fmt.Println()
 //
 // Your task:
 // 1. Print a greeting with your name (e.g., "Hello, my name is Alex")
@@ -17,6 +17,7 @@ import "fmt"
 // Try to solve this yourself before looking at challenge-solution.go!
 
 func main() {
-	// TODO: Write your code here
+	// TODO: Import "fmt" at the top, then write your code here
+	// Example: fmt.Println("Hello, my name is ...")
 
 }

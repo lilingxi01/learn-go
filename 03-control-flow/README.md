@@ -207,7 +207,7 @@ The classic FizzBuzz challenge with a twist!
 - For multiples of 7, print "Boom"
 - Handle combinations (e.g., 15 is "FizzBuzz", 21 is "FizzBoom", 35 is "BuzzBoom")
 
-Try it yourself before checking `challenge-solution.go`!
+Try it yourself before checking `challenge-solution/challenge-solution.go`!
 
 ## Best Practices
 

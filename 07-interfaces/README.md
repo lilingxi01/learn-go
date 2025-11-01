@@ -150,7 +150,7 @@ Build a shape calculator using interfaces!
 4. Calculate total area of multiple shapes
 5. Use type assertions to print shape-specific info
 
-Try it yourself before checking `challenge-solution.go`!
+Try it yourself before checking `challenge-solution/challenge-solution.go`!
 
 ## Best Practices
 

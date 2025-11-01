@@ -153,7 +153,7 @@ Build a contact management system!
 3. Use a slice to store contacts
 4. Bonus: Use a map for faster lookups
 
-Try it yourself before checking `challenge-solution.go`!
+Try it yourself before checking `challenge-solution/challenge-solution.go`!
 
 ## Best Practices
 

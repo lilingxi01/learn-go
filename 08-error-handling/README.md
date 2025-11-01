@@ -142,7 +142,7 @@ Build a robust calculator with comprehensive error handling!
 4. Use error wrapping for context
 5. Demonstrate panic/recover
 
-Try it yourself before checking `challenge-solution.go`!
+Try it yourself before checking `challenge-solution/challenge-solution.go`!
 
 ## Best Practices
 

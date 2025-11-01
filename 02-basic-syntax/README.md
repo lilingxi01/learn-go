@@ -153,7 +153,7 @@ go run constants.go
 
 ## Challenge: Temperature Converter 🌡️
 
-Open `challenge.go` and create a program that converts temperatures between Celsius, Fahrenheit, and Kelvin.
+Open `challenge/challenge.go` and create a program that converts temperatures between Celsius, Fahrenheit, and Kelvin.
 
 **Requirements**:
 
@@ -162,7 +162,7 @@ Open `challenge.go` and create a program that converts temperatures between Cels
 3. Convert it to Kelvin using the formula: K = C + 273.15
 4. Print all three values
 
-Try it yourself before checking `challenge-solution.go`!
+Try it yourself before checking `challenge-solution/challenge-solution.go`!
 
 ## Best Practices
 

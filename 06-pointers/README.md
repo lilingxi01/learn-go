@@ -110,7 +110,7 @@ Practice pointer manipulation!
 3. Write a `doubleValues` function that doubles all numbers in a slice
 4. Demonstrate the difference between value and pointer receivers
 
-Try it yourself before checking `challenge-solution.go`!
+Try it yourself before checking `challenge-solution/challenge-solution.go`!
 
 ## Best Practices
 
