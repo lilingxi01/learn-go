@@ -1,0 +1,35 @@
+# Ignore files for Docker build
+
+# Git
+.git
+.gitignore
+
+# Documentation
+*.md
+docs/
+
+# Tests
+*_test.go
+
+# Build artifacts
+bin/
+dist/
+*.exe
+
+# Development
+.vscode/
+.idea/
+*.swp
+
+# Temporary files
+tmp/
+*.tmp
+
+# Environment files
+.env
+.env.*
+
+# OS files
+.DS_Store
+Thumbs.db
+

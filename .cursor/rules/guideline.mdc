@@ -1,0 +1,779 @@
+---
+alwaysApply: true
+---
+
+## 📁 Repository Structure
+
+### Folder Organization
+
+```
+XX-topic-name/
+├── README.md              # Always present, comprehensive guide
+├── main.go or topic.go    # Primary example code
+├── challenge.go           # (Folders 01-08 only) Practice problems
+├── challenge-solution.go  # (Folders 01-08 only) Explained solutions
+├── go.mod                 # (Folders 09+ only) Module definition
+└── additional files       # Supporting code, packages, etc.
+```
+
+### Folder Naming Rules
+
+1. **Use padded numbers**: `01-`, `02-`, ..., `10-`, etc.
+
+   - Why: Ensures proper sorting in all file systems
+   - Example: `01-getting-started`, `10-concurrency`
+
+2. **Use lowercase with hyphens**: `control-flow`, not `Control_Flow` or `controlFlow`
+
+   - Why: Unix-friendly, URL-friendly, consistent
+
+3. **Be descriptive but concise**: `data-structures`, not `ds` or `data-structures-and-algorithms`
+
+4. **Follow progression**: Basic → Intermediate → Advanced → Production
+
+---
+
+## 📝 README.md Standards
+
+Every folder MUST have a README.md with this exact structure:
+
+````markdown
+# [Topic Title]
+
+[Brief description - 1-2 sentences]
+
+## Prerequisites
+
+- Completed [XX-previous-topic](../XX-previous-topic/)
+- Understanding of [concept]
+
+## What You'll Learn
+
+- Bullet point 1
+- Bullet point 2
+- Bullet point 3
+
+[MAIN CONTENT WITH CODE EXAMPLES]
+
+## Running the Examples
+
+```bash
+# Specific commands
+```
+````
+
+## Challenge: [Name] 🎯
+
+[Only for folders 01-08]
+
+## Best Practices
+
+1. Point 1
+2. Point 2
+
+## Common Patterns
+
+[Code examples]
+
+## Common Mistakes
+
+1. Mistake 1
+2. Mistake 2
+
+## Quick Reference
+
+[Cheat sheet style summary]
+
+## Next Steps
+
+1. Complete the challenge
+2. Try variations
+3. Move to **XX-next-topic**
+
+## Further Reading
+
+- [Official docs]
+- [Blog posts]
+
+````
+
+### README Writing Rules
+
+1. **Use imperative mood**: "Learn", "Master", "Understand" (not "Learning", "Mastering")
+2. **Include code examples**: Every concept needs runnable code
+3. **Link to previous/next**: Create learning path
+4. **Emojis sparingly**: Only for challenges (🎯) and warnings (⚠️)
+5. **Keep concise**: 200-500 lines max, link to code for details
+
+---
+
+## 💻 Go Code Standards
+
+### Absolute Requirements
+
+Every `.go` file MUST:
+
+1. ✅ **Pass `gofmt`**
+   ```bash
+   gofmt -w filename.go
+````
+
+2. ✅ **Have godoc comments on all exports**
+
+   ```go
+   // Add returns the sum of two integers.
+   // Example: Add(2, 3) returns 5
+   func Add(a, b int) int
+   ```
+
+3. ✅ **Use named constants, not magic numbers**
+
+   ```go
+   // ❌ BAD
+   area := radius * 3.14159 * radius
+
+   // ✅ GOOD
+   const Pi = math.Pi
+   area := Pi * radius * radius
+   ```
+
+4. ✅ **Include package-level documentation**
+
+   ```go
+   // Package mathutil provides mathematical utility functions
+   // for common operations.
+   package mathutil
+   ```
+
+5. ✅ **Handle all errors**
+
+   ```go
+   // ❌ BAD
+   result, _ := doSomething()
+
+   // ✅ GOOD
+   result, err := doSomething()
+   if err != nil {
+       return fmt.Errorf("failed to do something: %w", err)
+   }
+   ```
+
+### Code Organization
+
+```go
+package main
+
+import (
+    // 1. Standard library imports (sorted)
+    "fmt"
+    "math"
+
+    // 2. Third-party imports (sorted)
+    "github.com/user/package"
+
+    // 3. Local imports (sorted)
+    "example.com/myproject/util"
+)
+
+// 4. Package-level constants
+const (
+    MaxRetries = 3
+    Timeout    = 30 * time.Second
+)
+
+// 5. Package-level variables
+var (
+    ErrNotFound = errors.New("not found")
+)
+
+// 6. Types (interfaces first, then structs)
+type Reader interface {
+    Read() []byte
+}
+
+type MyStruct struct {
+    Field string
+}
+
+// 7. Methods on types
+func (m MyStruct) Method() {}
+
+// 8. Package-level functions
+func HelperFunction() {}
+
+// 9. main() function (if executable)
+func main() {}
+```
+
+### Naming Conventions
+
+| Element              | Convention                    | Example                     | Why            |
+| -------------------- | ----------------------------- | --------------------------- | -------------- |
+| Packages             | lowercase, single word        | `mathutil`, not `mathUtils` | Go standard    |
+| Exported functions   | PascalCase                    | `AddNumbers`                | Public API     |
+| Unexported functions | camelCase                     | `validateInput`             | Private helper |
+| Constants            | PascalCase or SCREAMING_SNAKE | `MaxValue`, `MAX_SIZE`      | Visibility     |
+| Variables            | camelCase                     | `userName`, `i`             | Short scope    |
+| Interfaces           | Thing or Thing-er             | `Reader`, `Shape`           | Not IReader    |
+
+### Comment Standards
+
+```go
+// Package-level: Full sentence, ends with period.
+// Starts with "Package name..."
+// Package mathutil provides mathematical utilities.
+package mathutil
+
+// Function: Start with function name, full sentence.
+// Include example if helpful.
+// Add returns the sum of two integers.
+// Example: Add(2, 3) returns 5
+func Add(a, b int) int {
+    return a + b
+}
+
+// Complex logic: Explain WHY, not WHAT
+// Using binary search here because the data is sorted
+// and we need O(log n) performance for large datasets
+idx := binarySearch(arr, target)
+
+// Don't state the obvious:
+// ❌ BAD: i++ // increment i
+// ❌ BAD: return x // return x
+```
+
+---
+
+## 🎓 Educational Methodology
+
+### Progressive Learning Path
+
+1. **Folders 01-08: Fundamentals**
+
+   - Include `challenge.go` and `challenge-solution.go`
+   - Single-file examples
+   - Focus on one concept per folder
+   - Build muscle memory
+
+2. **Folders 09-13: Intermediate**
+
+   - Introduce `go.mod` and modules
+   - Multi-file examples
+   - Combine previous concepts
+   - Realistic scenarios
+
+3. **Folders 14-27: Production Patterns**
+
+   - Complete module structure
+   - Real-world architecture
+   - Industry best practices
+   - Full project examples
+
+4. **Folders 28-36: Advanced Topics**
+   - Production deployment
+   - Performance optimization
+   - Enterprise patterns
+   - Complete systems
+
+### Challenge Design (Folders 01-08)
+
+Every challenge should:
+
+1. **Reinforce the lesson** - Use concepts just learned
+2. **Be achievable** - Solvable with current knowledge
+3. **Include hints** - Guide without giving away
+4. **Have clear requirements** - Numbered list of tasks
+
+```go
+// Challenge: [Name]
+//
+// [Description of what to build]
+//
+// Requirements:
+// 1. Specific task 1
+// 2. Specific task 2
+// 3. Specific task 3
+//
+// Bonus Challenges:
+// 4. Extra task (optional)
+//
+// Hints:
+// - Hint 1
+// - Hint 2
+//
+// Try to solve this yourself before looking at challenge-solution.go!
+
+func main() {
+    // TODO: Your solution here
+}
+```
+
+### Solution Design
+
+Solutions should demonstrate:
+
+1. **Multiple approaches** - Show different ways
+2. **Commented explanations** - Why this approach?
+3. **Best practices** - Production-grade code
+4. **Learning summary** - What you learned section
+
+```go
+func main() {
+    fmt.Println("=== Challenge Solution ===\n")
+
+    // ===================================
+    // Approach 1: [Method Name]
+    // ===================================
+    fmt.Println("Approach 1:")
+    // Code with comments
+
+    // ===================================
+    // Approach 2: [Alternative Method]
+    // ===================================
+    fmt.Println("\nApproach 2:")
+    // Alternative with tradeoffs explained
+
+    // ===================================
+    // What You Learned
+    // ===================================
+    fmt.Println("\n=== What You Learned ===")
+    fmt.Println("✓ Concept 1")
+    fmt.Println("✓ Concept 2")
+}
+```
+
+---
+
+## 🔒 Quality Assurance Checklist
+
+Before committing ANY code, verify:
+
+### ✅ Code Compiles
+
+```bash
+cd folder-name
+go build ./...
+```
+
+### ✅ Code Formats
+
+```bash
+gofmt -w .
+```
+
+### ✅ No Syntax Errors
+
+- Types declared at package level, not in functions
+- All imports used
+- No undefined variables
+
+### ✅ Documentation Complete
+
+- [ ] Package comment
+- [ ] Exported function comments
+- [ ] Complex logic explained
+- [ ] Examples in comments
+
+### ✅ Best Practices Applied
+
+- [ ] No magic numbers
+- [ ] Error handling present
+- [ ] Constants for repeated values
+- [ ] Meaningful variable names
+- [ ] No unused code
+
+### ✅ Educational Value
+
+- [ ] Concept clearly explained
+- [ ] Runnable examples provided
+- [ ] Challenges (if beginner section)
+- [ ] Links to further reading
+
+---
+
+## 🎨 Style Guidelines
+
+### Code Presentation
+
+1. **Use separators for sections**
+
+   ```go
+   // ===================================
+   // 1. Section Title
+   // ===================================
+   ```
+
+2. **Print section headers**
+
+   ```go
+   fmt.Println("=== Go Tutorial ===\n")
+   fmt.Println("1. Basic concepts:")
+   ```
+
+3. **Show before/after**
+
+   ```go
+   fmt.Printf("Before: x = %d\n", x)
+   modify(&x)
+   fmt.Printf("After: x = %d\n", x)
+   ```
+
+4. **Demonstrate both good and bad**
+
+   ```go
+   // ❌ BAD
+   if (x > 10) {  // Unnecessary parentheses
+
+   // ✅ GOOD
+   if x > 10 {
+   ```
+
+### Output Formatting
+
+```go
+// Use consistent formatting
+fmt.Printf("   Value: %d\n", x)        // Indent for sub-items
+fmt.Printf("Result: %.2f\n", result)   // Consistent decimals
+fmt.Println()                          // Blank line between sections
+```
+
+---
+
+## 🏗️ Module Structure (Folders 09+)
+
+### go.mod Requirements
+
+```go
+// Use descriptive module names
+module example.com/tutorial-name  // Not just "main" or "test"
+
+go 1.21  // Specify Go version
+
+require (
+    // List dependencies
+)
+```
+
+### Package Organization
+
+```
+module-folder/
+├── go.mod
+├── main.go           # Entry point
+├── package1/         # Supporting package
+│   └── file.go
+└── package2/
+    └── file.go
+```
+
+### Import Paths
+
+```go
+// Use full module path
+import "example.com/tutorial-name/package1"
+
+// Not relative imports
+// import "./package1"  // ❌ AVOID
+```
+
+---
+
+## 🧪 Testing Standards (When Applicable)
+
+For production examples (folders 14+):
+
+```go
+// file_test.go
+package mypackage
+
+import "testing"
+
+// TestFunctionName tests the FunctionName function
+func TestFunctionName(t *testing.T) {
+    tests := []struct {
+        name string
+        input int
+        want int
+    }{
+        {"positive", 5, 5},
+        {"negative", -5, 5},
+        {"zero", 0, 0},
+    }
+
+    for _, tt := range tests {
+        t.Run(tt.name, func(t *testing.T) {
+            got := FunctionName(tt.input)
+            if got != tt.want {
+                t.Errorf("got %v, want %v", got, tt.want)
+            }
+        })
+    }
+}
+```
+
+---
+
+## 🚀 Performance Considerations
+
+### When to Optimize
+
+1. **Don't optimize prematurely** - Focus on clarity first
+2. **Optimize when teaching performance** - Show benchmarks
+3. **Explain tradeoffs** - Why choose one approach over another
+
+### Memory Efficiency
+
+```go
+// Pre-allocate when size is known
+slice := make([]int, 0, expectedSize)
+
+// Use pointers for large structs
+func Process(data *LargeStruct) {}
+
+// Consider sync.Pool for frequently allocated objects
+```
+
+### Common Optimizations
+
+```go
+// ✅ Efficient string building
+var sb strings.Builder
+for _, s := range strings {
+    sb.WriteString(s)
+}
+result := sb.String()
+
+// ❌ Inefficient
+result := ""
+for _, s := range strings {
+    result += s  // Creates new string each time
+}
+```
+
+---
+
+## 🔐 Security Best Practices
+
+### Input Validation
+
+```go
+// Always validate user input
+func Divide(a, b float64) (float64, error) {
+    if b == 0 {
+        return 0, errors.New("division by zero")
+    }
+    return a / b, nil
+}
+```
+
+### Error Messages
+
+```go
+// ✅ GOOD: Generic error message
+return nil, errors.New("invalid credentials")
+
+// ❌ BAD: Leaks information
+return nil, errors.New("user exists but password is wrong")
+```
+
+### Resource Management
+
+```go
+// Always clean up resources
+file, err := os.Open("data.txt")
+if err != nil {
+    return err
+}
+defer file.Close()  // ✅ Guaranteed cleanup
+```
+
+---
+
+## 📦 Dependencies Management
+
+### When to Add Dependencies
+
+1. **Prefer standard library** - Use built-in packages when possible
+2. **Well-known packages only** - Stick to popular, maintained libraries
+3. **Justify in comments** - Explain why dependency is needed
+
+### Approved Dependencies
+
+For this tutorial course:
+
+- ✅ Standard library (always preferred)
+- ✅ `github.com/go-chi/chi` (HTTP router)
+- ✅ `github.com/uber-go/fx` (dependency injection)
+- ✅ `gorm.io/gorm` (ORM)
+- ✅ `github.com/rs/zerolog` (logging)
+- ✅ `github.com/spf13/viper` (configuration)
+
+---
+
+## 🌍 Internationalization
+
+### Language
+
+- Primary: English
+- Code comments: English only
+- Variable names: English only
+- README files: English (can add translations in separate files)
+
+### Cultural Sensitivity
+
+- Use inclusive examples
+- Avoid culturally specific references unless explaining Go idioms
+- Use neutral names in examples (Alice, Bob, Carol, etc.)
+
+---
+
+## 🔄 Maintenance Guidelines
+
+### When Adding New Folders
+
+1. **Follow the numbering** - Next available padded number
+2. **Update main README** - Add to learning path
+3. **Cross-link** - Reference from previous/next folders
+4. **Test thoroughly** - Run all code before committing
+
+### When Updating Existing Content
+
+1. **Maintain backward compatibility** - Don't break existing examples
+2. **Update references** - Check all cross-links
+3. **Run quality checks** - Format, build, test
+4. **Document changes** - Update README if behavior changes
+
+### Code Review Checklist
+
+Before accepting any changes:
+
+- [ ] Code compiles and runs
+- [ ] Formatted with `gofmt`
+- [ ] Follows naming conventions
+- [ ] Has proper documentation
+- [ ] No magic numbers or hardcoded values
+- [ ] Error handling present
+- [ ] README updated if needed
+- [ ] Fits into learning progression
+- [ ] Maintains consistent style
+
+---
+
+## 📊 Quality Metrics
+
+### Target Standards
+
+| Metric           | Target       | How to Check               |
+| ---------------- | ------------ | -------------------------- |
+| gofmt compliance | 100%         | `gofmt -l .` returns empty |
+| Godoc coverage   | 100% exports | Manual review              |
+| Code compiles    | 100%         | `go build ./...`           |
+| Magic numbers    | 0            | Manual review              |
+| Error handling   | 100%         | No `_` on errors           |
+
+### Review Frequency
+
+- **Before commit**: All checklist items
+- **Weekly**: Scan for outdated dependencies
+- **Monthly**: Review for Go version updates
+- **Per major release**: Full quality audit
+
+---
+
+## 🎓 Teaching Philosophy
+
+### Core Principles
+
+1. **Show, don't tell**: Code examples > paragraphs of text
+2. **Progressive complexity**: Each step builds on previous
+3. **Real-world relevance**: Production patterns from the start
+4. **Multiple learning styles**: Visual (code), written (README), hands-on (challenges)
+5. **Fail fast, learn fast**: Make errors obvious and educational
+
+### What Makes Good Tutorial Code
+
+✅ **DO**:
+
+- Write code you'd use in production
+- Explain the "why" behind decisions
+- Show multiple approaches with tradeoffs
+- Include error cases
+- Comment liberally for learners
+
+❌ **DON'T**:
+
+- Use shortcuts that need to be unlearned
+- Ignore error handling "for simplicity"
+- Skip documentation "because it's obvious"
+- Use toy examples that don't scale
+- Write code you'd be embarrassed to review
+
+---
+
+## 🏆 Excellence Standards
+
+### What "Production-Grade" Means
+
+Code in this tutorial should be good enough to:
+
+- Pass code review at Meta/Google
+- Deploy to production without changes
+- Serve as a reference implementation
+- Be maintained for years
+
+### When in Doubt
+
+Ask yourself:
+
+1. Would I approve this in code review?
+2. Would this work in production?
+3. Does this teach best practices?
+4. Is this the best way to solve this problem?
+
+If any answer is "no", improve it.
+
+---
+
+## 📞 Getting Help
+
+### Before Adding Code
+
+1. Read these guidelines
+2. Check existing folders for patterns
+3. Review CODE_QUALITY_REPORT.md
+4. Look at 2-3 similar examples
+
+### Resources
+
+- [Effective Go](https://go.dev/doc/effective_go)
+- [Go Code Review Comments](https://github.com/golang/go/wiki/CodeReviewComments)
+- [Uber Go Style Guide](https://github.com/uber-go/guide/blob/master/style.md)
+- [Google Go Style Guide](https://google.github.io/styleguide/go/)
+
+---
+
+## 🎯 Final Words
+
+> **Quality over quantity.**  
+> One perfect example teaches more than ten mediocre ones.
+
+> **Consistency is king.**  
+> Learners notice inconsistencies. They erode trust.
+
+> **Code is communication.**  
+> Write for the human reading it, not just the compiler.
+
+> **Production from day one.**  
+> Never teach something that needs to be unlearned later.
+
+---
+
+**Remember**: Every line of code is teaching someone. Make it count.
+
+_— Your Principal Engineer_
+
+---
+
+_Last Updated: 2025-11-01_  
+_Version: 1.0_  
+_Maintained by: learn-go tutorial team_

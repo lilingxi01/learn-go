@@ -1,0 +1,85 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+bin/
+dist/
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool
+*.out
+coverage.html
+coverage.txt
+
+# Dependency directories
+vendor/
+
+# Go workspace file (optional - uncomment if not using it)
+# go.work
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+*.env
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# PostgreSQL
+postgres-data/
+pgdata/
+
+# Supabase
+.supabase/
+supabase/.branches/
+supabase/.temp/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Logs
+*.log
+logs/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Build artifacts
+*.prof
+*.pprof
+cpu.prof
+mem.prof
+profile.out
+
+# Air (live reload) temporary files
+tmp/
+
+# Docker volumes (if using bind mounts)
+docker-data/
+
+# Migration lock files (optional)
+# *.lock
+

@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        go-version: ['1.21']
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: ${{ matrix.go-version }}
+
+      - name: Install dependencies
+        run: |
+          cd shared && go mod download
+          cd ../services/api && go mod download
+          cd ../worker && go mod download
+
+      - name: Run tests - shared
+        run: cd shared && go test -v -race -coverprofile=coverage.out ./...
+
+      - name: Run tests - API
+        run: cd services/api && go test -v -race -coverprofile=coverage.out ./...
+
+      - name: Run tests - Worker
+        run: cd services/worker && go test -v -race -coverprofile=coverage.out ./...
+
+      - name: Run linter
+        uses: golangci/golangci-lint-action@v3
+        with:
+          version: latest
+          working-directory: shared
+
+      - name: Build API
+        run: cd services/api && go build -v ./...
+
+      - name: Build Worker
+        run: cd services/worker && go build -v ./...
+

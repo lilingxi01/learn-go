@@ -1,0 +1,14 @@
+# Example Configuration File
+# Copy to config.yaml and customize
+
+server:
+  port: "8080"
+
+app:
+  name: "Go Tutorial API"
+
+log:
+  level: "info"  # debug, info, warn, error
+
+environment: "development"  # development, staging, production
+
