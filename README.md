@@ -181,12 +181,26 @@ This keeps the original course clean for reference.
 
 Contributions welcome! See `.cursor/rules/guideline.mdc` for standards.
 
-To add a topic:
+### Adding Topics
 
 1. Create numbered folder (e.g., `37-new-topic/`)
 2. Include `README.md` and code examples
 3. Follow existing patterns
 4. Update this README
+
+### Formatting
+
+Format your changes before committing:
+
+```bash
+make format      # Format Go + Markdown
+make format-go   # Go only
+make format-md   # Markdown only
+```
+
+Or install tools manually:
+- Go: `gofmt -s -w .`
+- Markdown: `prettier --write "**/*.md"`
 
 ## 📚 Resources
 
