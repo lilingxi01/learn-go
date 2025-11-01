@@ -18,6 +18,7 @@ Get started with GORM, Go's most popular ORM.
 ## What is GORM?
 
 GORM is a developer-friendly ORM library for Go with features:
+
 - Full-Featured ORM
 - Associations (Has One, Has Many, Belongs To, Many To Many)
 - Hooks (Before/After Create/Save/Update/Delete/Find)
@@ -38,4 +39,3 @@ go run main.go
 ## Next Steps
 
 Move to **23-migrations-setup** for production migration patterns
-

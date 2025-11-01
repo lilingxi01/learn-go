@@ -143,6 +143,7 @@ go run type-assertions.go
 Build a shape calculator using interfaces!
 
 **Requirements**:
+
 1. Create a Shape interface with methods: Area(), Perimeter()
 2. Implement for: Rectangle, Circle, Triangle
 3. Create a function that accepts Shape interface
@@ -244,4 +245,3 @@ case int:
 - [Effective Go - Interfaces](https://go.dev/doc/effective_go#interfaces)
 - [Go Proverbs - Interfaces](https://go-proverbs.github.io/)
 - [Interface Design in Go](https://rakyll.org/interface-pollution/)
-

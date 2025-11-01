@@ -9,7 +9,7 @@ Master database relationships: Has One, Has Many, Belongs To, Many To Many.
 ## What You'll Learn
 
 - Has One relationship
-- Has Many relationship  
+- Has Many relationship
 - Belongs To relationship
 - Many To Many relationship
 - Preloading (eager loading)
@@ -26,4 +26,3 @@ go run main.go
 ## Next Steps
 
 Move to **26-gorm-advanced** for transactions and hooks
-

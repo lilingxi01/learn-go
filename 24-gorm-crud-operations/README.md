@@ -27,4 +27,3 @@ go run main.go
 ## Next Steps
 
 Move to **25-gorm-relationships** for associations
-

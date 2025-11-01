@@ -96,4 +96,3 @@ GET    /api/users/{id}/posts - Get user's posts
 
 - [Standard Go Project Layout](https://github.com/golang-standards/project-layout)
 - [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
-

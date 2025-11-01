@@ -199,6 +199,7 @@ make format-md   # Markdown only
 ```
 
 Or install tools manually:
+
 - Go: `gofmt -s -w .`
 - Markdown: `prettier --write "**/*.md"`
 

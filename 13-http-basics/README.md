@@ -190,6 +190,7 @@ func loggingMiddleware(next http.HandlerFunc) http.HandlerFunc {
 ## HTTP Status Codes
 
 Common codes:
+
 - `200 OK`: Success
 - `201 Created`: Resource created
 - `400 Bad Request`: Invalid input
@@ -250,4 +251,3 @@ path := r.URL.Path
 - [Writing Web Applications](https://go.dev/doc/articles/wiki/)
 - [HTTP Server Examples](https://gobyexample.com/http-servers)
 - [HTTP Client Examples](https://gobyexample.com/http-clients)
-

@@ -103,7 +103,7 @@ func NewServer(logger *Logger) *Server {
 ```go
 func NewServer(lc fx.Lifecycle, logger *Logger) *Server {
     server := &Server{logger: logger}
-    
+
     lc.Append(fx.Hook{
         OnStart: func(ctx context.Context) error {
             // Start server
@@ -114,7 +114,7 @@ func NewServer(lc fx.Lifecycle, logger *Logger) *Server {
             return nil
         },
     })
-    
+
     return server
 }
 ```
@@ -204,14 +204,14 @@ type Params struct {
 ```go
 func TestService(t *testing.T) {
     var service *Service
-    
+
     app := fxtest.New(t,
         fx.Provide(NewMockDB),
         fx.Provide(NewService),
         fx.Populate(&service),
     )
     defer app.RequireStart().RequireStop()
-    
+
     // Test service
 }
 ```
@@ -271,4 +271,3 @@ var Module = fx.Options(
 - [Dependency Injection in Go](https://blog.drewolson.org/dependency-injection-in-go)
 - [FX GitHub](https://github.com/uber-go/fx)
 - [Inversion of Control](https://martinfowler.com/articles/injection.html)
-

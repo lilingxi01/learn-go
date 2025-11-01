@@ -1,3 +1,7 @@
+# Node modules (for prettier)
+node_modules/
+package-lock.json
+
 # Binaries for programs and plugins
 *.exe
 *.exe~

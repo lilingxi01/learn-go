@@ -61,7 +61,7 @@ func TestAdd(t *testing.T) {
         {"negative", -2, -3, -5},
         {"zero", 0, 5, 5},
     }
-    
+
     for _, tt := range tests {
         t.Run(tt.name, func(t *testing.T) {
             got := Add(tt.a, tt.b)
@@ -130,10 +130,10 @@ func ExampleAdd() {
 ```go
 func setup(t *testing.T) (*testState, func()) {
     t.Helper()  // Mark as helper for better error messages
-    
+
     // Setup code
     state := &testState{}
-    
+
     // Return cleanup function
     return state, func() {
         // Cleanup code
@@ -226,6 +226,7 @@ go tool cover -html=coverage.out
 ```
 
 Good coverage metrics:
+
 - **70-80%**: Acceptable
 - **80-90%**: Good
 - **90%+**: Excellent
@@ -292,4 +293,3 @@ func ExampleFn() {
 - [Table Driven Tests](https://github.com/golang/go/wiki/TableDrivenTests)
 - [Go Testing Best Practices](https://go.dev/blog/examples)
 - [Advanced Testing with Go](https://www.youtube.com/watch?v=8hQG7QlcLBk)
-

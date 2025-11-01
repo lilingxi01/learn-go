@@ -222,4 +222,3 @@ go mod vendor
 - [How to Write Go Code](https://go.dev/doc/code)
 - [Package Names](https://go.dev/blog/package-names)
 - [Standard Package Layout](https://github.com/golang-standards/project-layout)
-

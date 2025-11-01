@@ -44,11 +44,13 @@ supabase start
 ```
 
 This starts:
+
 - PostgreSQL on port 54322
 - Studio UI on http://localhost:54323
 - All credentials shown in terminal
 
 **Connection String:**
+
 ```
 postgresql://postgres:postgres@localhost:54322/postgres
 ```
@@ -60,7 +62,7 @@ postgresql://postgres:postgres@localhost:54322/postgres
 Create `docker-compose.yml`:
 
 ```yaml
-version: '3.8'
+version: "3.8"
 
 services:
   postgres:
@@ -85,6 +87,7 @@ docker-compose up -d
 ```
 
 **Connection String:**
+
 ```
 postgresql://postgres:postgres@localhost:5432/tutorial
 ```
@@ -111,6 +114,7 @@ sudo systemctl start postgresql
 Download from [postgresql.org](https://www.postgresql.org/download/windows/)
 
 **Connection String:**
+
 ```
 postgresql://postgres:yourpassword@localhost:5432/tutorial
 ```
@@ -249,4 +253,3 @@ ALTER USER postgres PASSWORD 'newpassword';
 - [Supabase Documentation](https://supabase.com/docs)
 - [PostgreSQL Tutorial](https://www.postgresqltutorial.com/)
 - [pgAdmin](https://www.pgadmin.org/) - GUI tool for PostgreSQL
-

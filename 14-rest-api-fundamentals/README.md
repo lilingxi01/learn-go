@@ -43,22 +43,24 @@ DELETE /users/123      # Delete user 123
 
 ## HTTP Methods
 
-| Method | Purpose | Idempotent | Safe |
-|--------|---------|------------|------|
-| GET | Retrieve resource | ✅ | ✅ |
-| POST | Create resource | ❌ | ❌ |
-| PUT | Update/Replace resource | ✅ | ❌ |
-| PATCH | Partial update | ❌ | ❌ |
-| DELETE | Delete resource | ✅ | ❌ |
+| Method | Purpose                 | Idempotent | Safe |
+| ------ | ----------------------- | ---------- | ---- |
+| GET    | Retrieve resource       | ✅         | ✅   |
+| POST   | Create resource         | ❌         | ❌   |
+| PUT    | Update/Replace resource | ✅         | ❌   |
+| PATCH  | Partial update          | ❌         | ❌   |
+| DELETE | Delete resource         | ✅         | ❌   |
 
 ## HTTP Status Codes
 
 ### Success (2xx)
+
 - `200 OK`: Standard success
 - `201 Created`: Resource created
 - `204 No Content`: Success, no body
 
 ### Client Errors (4xx)
+
 - `400 Bad Request`: Invalid input
 - `401 Unauthorized`: Authentication required
 - `403 Forbidden`: Authenticated but not authorized
@@ -67,6 +69,7 @@ DELETE /users/123      # Delete user 123
 - `422 Unprocessable Entity`: Validation failed
 
 ### Server Errors (5xx)
+
 - `500 Internal Server Error`: Generic server error
 - `503 Service Unavailable`: Temporary unavailability
 
@@ -125,6 +128,7 @@ curl http://localhost:8080/api/users/1
 ## RESTful URL Design
 
 ### Good Examples
+
 ```
 GET    /api/v1/users
 GET    /api/v1/users/123
@@ -134,6 +138,7 @@ GET    /api/v1/products?category=electronics&limit=10
 ```
 
 ### Bad Examples
+
 ```
 GET    /api/v1/getUser?id=123        # Verb in URL
 POST   /api/v1/users/create          # Redundant with method
@@ -228,4 +233,3 @@ w.WriteHeader(http.StatusCreated)
 - [Chi Router](https://github.com/go-chi/chi)
 - [HTTP Status Codes](https://httpstatuses.com/)
 - [Best Practices for REST API Design](https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/)
-

@@ -10,7 +10,7 @@ Understand pointers, when to use them, and common patterns.
 ## What You'll Learn
 
 - What pointers are and why they matter
-- Pointer operators (* and &)
+- Pointer operators (\* and &)
 - Passing by value vs passing by reference
 - Pointer receivers vs value receivers
 - When to use pointers
@@ -104,6 +104,7 @@ go run pointers.go
 Practice pointer manipulation!
 
 **Requirements**:
+
 1. Write a `swap` function that swaps two integers using pointers
 2. Write a `modifyPerson` function that updates a Person struct
 3. Write a `doubleValues` function that doubles all numbers in a slice
@@ -141,7 +142,7 @@ var i interface{} = (*Person)(nil)
 ## Common Mistakes
 
 1. **Dereferencing nil pointer**: Causes panic
-2. **Forgetting & or ***: Type mismatch errors
+2. **Forgetting & or \***: Type mismatch errors
 3. **Unnecessary pointers**: Using pointers for simple types
 4. **Pointer to loop variable**: Common gotcha in closures
 
@@ -180,4 +181,3 @@ t.val = 20        // Auto-dereference
 - [A Tour of Go - Pointers](https://go.dev/tour/moretypes/1)
 - [Effective Go - Pointers vs Values](https://go.dev/doc/effective_go#pointers_vs_values)
 - [Go FAQ - Pointers](https://go.dev/doc/faq#Pointers)
-

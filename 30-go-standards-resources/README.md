@@ -38,6 +38,7 @@ Comprehensive guide to Go coding standards and where to find them.
 [https://github.com/uber-go/guide/blob/master/style.md](https://github.com/uber-go/guide/blob/master/style.md)
 
 Key points:
+
 - Prefer interfaces over concrete types
 - Use functional options pattern
 - Avoid global variables
@@ -49,6 +50,7 @@ Key points:
 [https://google.github.io/styleguide/go/](https://google.github.io/styleguide/go/)
 
 Emphasizes:
+
 - Readability
 - Simplicity
 - Consistency
@@ -205,7 +207,7 @@ func TestFunctionName(t *testing.T) {
     }{
         {name: "case1"},
     }
-    
+
     for _, tt := range tests {
         t.Run(tt.name, func(t *testing.T) {
             // test code
@@ -238,18 +240,22 @@ Before committing:
 ## Resources by Topic
 
 ### Concurrency
+
 - [Go Concurrency Patterns](https://go.dev/talks/2012/concurrency.slide)
 - [Advanced Concurrency Patterns](https://go.dev/talks/2013/advconc.slide)
 
 ### Testing
+
 - [Table Driven Tests](https://github.com/golang/go/wiki/TableDrivenTests)
 - [Testing Best Practices](https://go.dev/doc/tutorial/add-a-test)
 
 ### Performance
+
 - [Profiling Go Programs](https://go.dev/blog/pprof)
 - [High Performance Go Workshop](https://dave.cheney.net/high-performance-go-workshop/dotgo-paris.html)
 
 ### Security
+
 - [Go Security Policy](https://go.dev/security)
 - [Writing Secure Go Code](https://github.com/OWASP/Go-SCP)
 
@@ -272,4 +278,3 @@ Before committing:
 - [Effective Go](https://go.dev/doc/effective_go)
 - [Go Proverbs](https://go-proverbs.github.io/)
 - [Go at Google](https://go.dev/talks/2012/splash.article)
-

@@ -190,6 +190,7 @@ go run json.go
 ## File Permissions
 
 Unix-style permissions (octal):
+
 - `0644`: Owner read/write, group/others read
 - `0755`: Owner all, group/others read+execute
 - `0600`: Owner read/write only
@@ -300,4 +301,3 @@ json.Unmarshal(data, &v)
 - [io Package](https://pkg.go.dev/io)
 - [bufio Package](https://pkg.go.dev/bufio)
 - [encoding/json Package](https://pkg.go.dev/encoding/json)
-

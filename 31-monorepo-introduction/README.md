@@ -40,6 +40,7 @@ monorepo/
 ### Monorepo
 
 ✅ **Advantages:**
+
 - Atomic changes across services
 - Shared code reuse
 - Consistent tooling
@@ -47,6 +48,7 @@ monorepo/
 - Single source of truth
 
 ❌ **Challenges:**
+
 - Larger repository
 - CI/CD complexity
 - Access control
@@ -55,12 +57,14 @@ monorepo/
 ### Polyrepo
 
 ✅ **Advantages:**
+
 - Smaller repositories
 - Independent deployments
 - Clearer ownership
 - Simpler CI/CD
 
 ❌ **Challenges:**
+
 - Code duplication
 - Version management
 - Cross-repo changes difficult
@@ -69,12 +73,14 @@ monorepo/
 ## When to Use Monorepo
 
 Use monorepo when:
+
 - Multiple services share code
 - Team collaborates across services
 - Atomic cross-service changes needed
 - Consistent versioning required
 
 Use polyrepo when:
+
 - Services are truly independent
 - Different teams/organizations
 - Different release cycles
@@ -109,6 +115,7 @@ use (
 ## Real-World Examples
 
 Companies using Go monorepos:
+
 - **Uber**: Microservices in monorepo
 - **Monzo**: Financial services
 - **Cloudflare**: Edge services
@@ -148,4 +155,3 @@ Companies using Go monorepos:
 - [Go Workspaces](https://go.dev/doc/tutorial/workspaces)
 - [Monorepo at Scale](https://semaphoreci.com/blog/what-is-monorepo)
 - [Managing Go Dependencies in Monorepos](https://golang.howtos.io/managing-go-dependencies-in-monorepos/)
-

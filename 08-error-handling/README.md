@@ -135,6 +135,7 @@ go run custom-errors.go
 Build a robust calculator with comprehensive error handling!
 
 **Requirements**:
+
 1. Create custom error types for different failure modes
 2. Implement safe division with proper error handling
 3. Add input validation
@@ -247,4 +248,3 @@ defer func() {
 - [Go Blog - Working with Errors](https://go.dev/blog/go1.13-errors)
 - [Effective Go - Errors](https://go.dev/doc/effective_go#errors)
 - [Errors are values](https://go.dev/blog/errors-are-values)
-

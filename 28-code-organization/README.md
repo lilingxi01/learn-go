@@ -45,6 +45,7 @@ myproject/
 ## Directory Purposes
 
 ### `/cmd`
+
 - Main applications for this project
 - Directory name matches executable name
 - Keep code in `main.go` minimal
@@ -58,6 +59,7 @@ cmd/
 ```
 
 ### `/internal`
+
 - Private application code
 - Cannot be imported by external projects
 - Core business logic here
@@ -74,6 +76,7 @@ internal/
 ```
 
 ### `/pkg`
+
 - Public libraries that external projects can import
 - Use sparingly
 - Well-documented public APIs
@@ -151,6 +154,7 @@ internal/
 ## Anti-Patterns
 
 ❌ **Don't:**
+
 - Put everything in `main` package
 - Create `utils` or `helpers` packages (too generic)
 - Have circular dependencies
@@ -158,6 +162,7 @@ internal/
 - Mix business logic with HTTP handlers
 
 ✅ **Do:**
+
 - Use meaningful package names
 - Keep packages focused
 - Use `/internal` for private code
@@ -179,4 +184,3 @@ See the `example-project/` folder for a complete demonstration.
 - [Standard Go Project Layout](https://github.com/golang-standards/project-layout)
 - [GopherCon 2018: How Do You Structure Your Go Apps](https://www.youtube.com/watch?v=oL6JBUk6tj0)
 - [Package Oriented Design](https://www.ardanlabs.com/blog/2017/02/package-oriented-design.html)
-

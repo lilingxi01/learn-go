@@ -25,4 +25,3 @@ go run .
 ## Next Steps
 
 Move to **20-postgresql-setup** for database integration
-

@@ -153,4 +153,3 @@ func ExampleAdd_negative() {
 - [Effective Go - Commentary](https://go.dev/doc/effective_go#commentary)
 - [Godoc: documenting Go code](https://go.dev/blog/godoc)
 - [Go Doc Comments](https://go.dev/doc/comment)
-

@@ -13,8 +13,8 @@ help:
 install:
 	@echo "Installing formatting tools..."
 	@which gofmt > /dev/null || echo "gofmt comes with Go installation"
-	@which prettier > /dev/null || npm install -g prettier
-	@echo "✓ Tools installed"
+	@echo "Prettier will be run via npx (no global install needed)"
+	@echo "✓ Tools ready"
 
 # Format all files
 format: format-go format-md
@@ -28,7 +28,7 @@ format-go:
 # Format Markdown files
 format-md:
 	@echo "Formatting Markdown files..."
-	@prettier --write "**/*.md"
+	@npx prettier@latest --write "**/*.md"
 	@echo "✓ Markdown files formatted"
 
 # Check formatting
@@ -36,5 +36,5 @@ check:
 	@echo "Checking Go files..."
 	@gofmt -l . | grep . && echo "❌ Some Go files need formatting" || echo "✓ Go files OK"
 	@echo "Checking Markdown files..."
-	@prettier --check "**/*.md" || echo "❌ Some Markdown files need formatting"
+	@npx prettier@latest --check "**/*.md" || echo "❌ Some Markdown files need formatting"
 

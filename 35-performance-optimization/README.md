@@ -72,4 +72,3 @@ Move to **36-production-patterns** for final production patterns
 
 - [Profiling Go Programs](https://go.dev/blog/pprof)
 - [High Performance Go](https://dave.cheney.net/high-performance-go-workshop/gopherchina-2019.html)
-

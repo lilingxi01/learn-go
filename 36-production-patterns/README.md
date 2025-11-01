@@ -21,20 +21,20 @@ Essential patterns for production-ready Go services.
 ```go
 func main() {
     srv := &http.Server{Addr: ":8080"}
-    
+
     go func() {
         srv.ListenAndServe()
     }()
-    
+
     // Wait for interrupt
     quit := make(chan os.Signal, 1)
     signal.Notify(quit, syscall.SIGINT, syscall.SIGTERM)
     <-quit
-    
+
     // Graceful shutdown
     ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
     defer cancel()
-    
+
     if err := srv.Shutdown(ctx); err != nil {
         log.Fatal("Shutdown error:", err)
     }
@@ -99,7 +99,7 @@ func (cb *CircuitBreaker) Call(fn func() error) error {
             return errors.New("circuit breaker open")
         }
     }
-    
+
     err := fn()
     if err != nil {
         cb.failures++
@@ -109,7 +109,7 @@ func (cb *CircuitBreaker) Call(fn func() error) error {
         }
         return err
     }
-    
+
     cb.failures = 0
     cb.state = "closed"
     return nil
@@ -126,7 +126,7 @@ func retryWithBackoff(fn func() error, maxRetries int) error {
         if err == nil {
             return nil
         }
-        
+
         // Exponential backoff
         waitTime := time.Duration(math.Pow(2, float64(i))) * time.Second
         time.Sleep(waitTime)
@@ -141,14 +141,14 @@ func retryWithBackoff(fn func() error, maxRetries int) error {
 func callWithTimeout(url string) error {
     ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
     defer cancel()
-    
+
     req, _ := http.NewRequestWithContext(ctx, "GET", url, nil)
     resp, err := http.DefaultClient.Do(req)
     if err != nil {
         return err
     }
     defer resp.Body.Close()
-    
+
     return nil
 }
 ```
@@ -217,4 +217,3 @@ You've completed the entire Go Production Service Tutorial!
 - [The Go Programming Language (book)](https://www.gopl.io/)
 - [Learning Go (book)](https://www.oreilly.com/library/view/learning-go/9781492077206/)
 - [Production-Ready Go](https://leanpub.com/production-ready-go)
-

@@ -143,6 +143,7 @@ go run structs.go
 Build a contact management system!
 
 **Requirements**:
+
 1. Create a Contact struct with: Name, Phone, Email
 2. Implement functions to:
    - Add a contact
@@ -241,4 +242,3 @@ func (p *Person) Method() {
 - [Go Slices: usage and internals](https://go.dev/blog/slices-intro)
 - [Effective Go - Maps](https://go.dev/doc/effective_go#maps)
 - [Effective Go - Composite Literals](https://go.dev/doc/effective_go#composite_literals)
-

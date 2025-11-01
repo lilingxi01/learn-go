@@ -27,4 +27,3 @@ go run connection.go
 ## Next Steps
 
 Move to **22-gorm-introduction** to learn the GORM ORM
-

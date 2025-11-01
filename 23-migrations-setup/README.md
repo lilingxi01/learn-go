@@ -42,4 +42,3 @@ make migrate-create NAME=add_users_table
 ## Next Steps
 
 Move to **24-gorm-crud-operations** for CRUD patterns
-

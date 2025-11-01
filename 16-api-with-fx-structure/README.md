@@ -75,4 +75,3 @@ curl -X POST http://localhost:8080/api/users \
 
 - [FX Best Practices](https://uber-go.github.io/fx/best-practices.html)
 - [Clean Architecture in Go](https://medium.com/@hatajoe/clean-architecture-in-go-4030f11ec1b1)
-

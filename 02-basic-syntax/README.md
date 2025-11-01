@@ -40,6 +40,7 @@ var x, y, z int
 ### The := Operator
 
 The `:=` operator is a shorthand for declaring and initializing variables:
+
 - Can only be used inside functions
 - Type is inferred from the value
 - Most common in Go code
@@ -72,6 +73,7 @@ rune    // Alias for int32 (represents a Unicode code point)
 ### Zero Values
 
 Variables declared without an initial value get a "zero value":
+
 - `0` for numeric types
 - `false` for booleans
 - `""` (empty string) for strings
@@ -154,6 +156,7 @@ go run constants.go
 Open `challenge.go` and create a program that converts temperatures between Celsius, Fahrenheit, and Kelvin.
 
 **Requirements**:
+
 1. Declare a temperature in Celsius as a variable
 2. Convert it to Fahrenheit using the formula: F = C × 9/5 + 32
 3. Convert it to Kelvin using the formula: K = C + 273.15
@@ -189,22 +192,22 @@ func main() {
     // Variables
     var name string = "Go"
     age := 15  // Years since Go was released
-    
+
     // Constants
     const Version = "1.21"
-    
+
     // Multiple declarations
     var x, y int = 1, 2
-    
+
     // Zero values
     var count int        // 0
     var active bool      // false
     var text string      // ""
-    
+
     // Type conversion
     var i int = 42
     var f float64 = float64(i)
-    
+
     fmt.Println(name, age, Version, x, y, count, active, text, f)
 }
 ```
@@ -212,6 +215,7 @@ func main() {
 ## Next Steps
 
 After mastering variables and types:
+
 1. Complete the temperature converter challenge
 2. Experiment with different types
 3. Try type conversions
@@ -222,4 +226,3 @@ After mastering variables and types:
 - [A Tour of Go - Basics](https://go.dev/tour/basics)
 - [Go Spec - Types](https://go.dev/ref/spec#Types)
 - [Effective Go - Names](https://go.dev/doc/effective_go#names)
-

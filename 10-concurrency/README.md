@@ -44,6 +44,7 @@ go sayHello()  // Runs concurrently
 ```
 
 Goroutines are:
+
 - Lightweight (2KB initial stack)
 - Cheap to create (thousands or millions)
 - Scheduled by Go runtime
@@ -251,4 +252,3 @@ defer mu.Unlock()
 - [Go Concurrency Patterns](https://go.dev/blog/pipelines)
 - [Advanced Go Concurrency Patterns](https://go.dev/blog/io2013-talk-concurrency)
 - [Share Memory By Communicating](https://go.dev/blog/codelab-share)
-

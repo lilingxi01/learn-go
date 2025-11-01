@@ -195,6 +195,7 @@ go run loops.go
 The classic FizzBuzz challenge with a twist!
 
 **Standard FizzBuzz**:
+
 - Print numbers from 1 to 100
 - For multiples of 3, print "Fizz"
 - For multiples of 5, print "Buzz"
@@ -202,6 +203,7 @@ The classic FizzBuzz challenge with a twist!
 - Otherwise, print the number
 
 **Your Task**: Implement FizzBuzz with these additional rules:
+
 - For multiples of 7, print "Boom"
 - Handle combinations (e.g., 15 is "FizzBuzz", 21 is "FizzBoom", 35 is "BuzzBoom")
 
@@ -308,4 +310,3 @@ for {
 - [Effective Go - Control Structures](https://go.dev/doc/effective_go#control-structures)
 - [Go by Example - If/Else](https://gobyexample.com/if-else)
 - [Go by Example - For](https://gobyexample.com/for)
-

@@ -27,6 +27,7 @@ Request → Middleware 1 → Middleware 2 → Handler → Response
 ```
 
 Common uses:
+
 - Authentication/authorization
 - Logging
 - CORS
@@ -62,4 +63,3 @@ Move to **18-request-validation** for input validation patterns
 
 - [Writing Middleware](https://www.alexedwards.net/blog/making-and-using-middleware)
 - [Chi Middleware](https://github.com/go-chi/chi#middlewares)
-
