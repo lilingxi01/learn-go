@@ -1,5 +1,6 @@
 ---
-alwaysApply: true
+description: When creating or updating course content
+alwaysApply: false
 ---
 
 ## 📁 Repository Structure
@@ -778,16 +779,16 @@ If any answer is "no", improve it.
 
 ## 🎯 Final Words
 
-> **Quality over quantity.**  
+> **Quality over quantity.**
 > One perfect example teaches more than ten mediocre ones.
 
-> **Consistency is king.**  
+> **Consistency is king.**
 > Learners notice inconsistencies. They erode trust.
 
-> **Code is communication.**  
+> **Code is communication.**
 > Write for the human reading it, not just the compiler.
 
-> **Production from day one.**  
+> **Production from day one.**
 > Never teach something that needs to be unlearned later.
 
 ---
@@ -798,6 +799,7 @@ _— Your Principal Engineer_
 
 ---
 
-_Last Updated: 2025-11-01_  
-_Version: 1.0_  
+_Last Updated: 2025-11-01_
+_Version: 1.0_
 _Maintained by: learn-go tutorial team_
+````
